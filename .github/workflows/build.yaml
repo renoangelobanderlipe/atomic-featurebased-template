@@ -1,11 +1,11 @@
-name: CI Build
+name: Next.js Build
 
 on:
   push:
     branches:
       - main
-      - develop
-      - feature/**
+      - deploy/**
+      - release/**
 
 jobs:
   build:
