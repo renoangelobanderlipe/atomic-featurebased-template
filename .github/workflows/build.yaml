@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [main, release, deploy/**]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -12,28 +12,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js with pnpm caching
+      # 2. Setup Node.js + enable pnpm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
 
-      # Install pnpm
-      - name: Setup pnpm
+      # 3. Install pnpm (REQUIRED before using pnpm)
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
 
-      # Install dependencies
+      # 4. Install dependencies using pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Build Next.js application
-      - name: Build
+      # 5. Build Next.js application
+      - name: Build Next.js app
         run: pnpm build
