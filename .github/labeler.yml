@@ -1,0 +1,52 @@
+# ------------------------
+# FRONTEND (Next.js)
+# ------------------------
+frontend:
+  - "app/**"
+  - "features/**"
+  - "shared/**"
+  - "store/**"
+  - "lib/**"
+  - "types/**"
+  - "public/**"
+
+# ------------------------
+# TESTS
+# ------------------------
+tests:
+  - "__tests__/**"
+  - "tests/**"
+
+# ------------------------
+# CONFIG / BUILD SYSTEM
+# ------------------------
+config:
+  - "tsconfig.json"
+  - "next.config.ts"
+  - "postcss.config.mjs"
+  - "biome.json"
+  - "next-env.d.ts"
+  - ".env.example"
+  - "page.json"
+
+# ------------------------
+# ROOT FILES (Not config)
+# ------------------------
+root:
+  - "pnpm-lock.yaml"
+  - ".gitignore"
+  - "package.json"
+
+# ------------------------
+# DOCUMENTATION
+# ------------------------
+documentation:
+  - "README.md"
+  - "docs/**"
+
+# ------------------------
+# DEVOPS / CI/CD
+# ------------------------
+devops:
+  - ".github/**"
+  - "scripts/**"
